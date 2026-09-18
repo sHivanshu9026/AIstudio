@@ -23,42 +23,5 @@ Deployment: Vercel (Frontend), Render (Backend)
 
 
 
-🏗️ Architecture - 
 
 
-                         👤 USER
-                           │
-                           ▼
-              ┌─────────────────────────┐
-              │     🎨 FRONTEND         │
-              │  React 19 + Vite        │
-              │  Tailwind CSS            │
-              │  React Router + Axios   │
-              └────────────┬────────────┘
-                           │
-                     REST API Calls
-                           │
-                           ▼
-              ┌─────────────────────────┐
-              │     ⚙️ BACKEND          │
-              │  Node.js + Express.js   │
-              │  Controllers + Routes   │
-              │  Middleware + APIs      │
-              └──────┬──────┬───────┬───┘
-                     │      │       │
-          ┌──────────┘      │       └──────────┐
-          ▼                 ▼                  ▼
-   ┌─────────────┐   ┌──────────────┐   ┌──────────────┐
-   │ 🔐 Clerk    │   │ 🤖 AI APIs   │   │ 🗄️ Database  │
-   │ Auth &      │   │ Gemini       │   │ Neon         │
-   │ Authorization│   │ Clipdrop     │   │ PostgreSQL   │
-   └─────────────┘   └──────────────┘   └──────────────┘
-                           │
-                           ▼
-                  📄 AI / Image Processing
-                           │
-                           ▼
-                    📊 Results & Data
-                           │
-                           ▼
-                    👤 User Dashboard
