@@ -4,77 +4,37 @@ Users can generate articles and blog titles, create AI images, remove image back
 
 ✨ Features
 ✍️ AI Article Generator — Generate articles from topics with different length options.
-🏷️ Blog Title Generator — Generate multiple titles based on keywords and categories.
-🖼️ AI Image Generator — Generate images from text prompts with different styles.
+🏷️ Blog Title Generator — Generate titles based on keywords and categories.
+🖼️ AI Image Generator — Generate images from text prompts and styles.
 🪄 Background Removal — Remove image backgrounds using AI.
-🧹 Object Removal — Select and remove unwanted objects using an image mask.
-📄 AI Resume Reviewer — Upload a PDF resume and receive structured AI feedback.
-🔐 Authentication — Secure login and user management using Clerk.
-💎 Free & Premium Plans — Control feature access and usage through Clerk.
-📊 Dashboard — View user-specific creations and activity.
+🧹 Object Removal — Remove unwanted objects using image masks.
+📄 AI Resume Reviewer — Upload a PDF resume and receive AI-generated feedback.
+🔐 Authentication — Secure authentication and user management with Clerk.
+💎 Free & Premium Plans — Manage feature access and usage.
+📊 Dashboard — Manage user creations and activity.
 
 
 🛠️ Tech Stack
-🎨 Frontend-
-React 19, Vite, Tailwind CSS
-React Router, Axios
-Clerk, React Markdown, Lucide React
+AI Studio is built using React 19, Vite, Tailwind CSS, React Router, Axios, Clerk, React Markdown, and Lucide React for the frontend. The backend is developed with Node.js and Express.js, along with Multer, PDF Parse, FormData, and CORS. Neon PostgreSQL is used for database management, while Clerk handles authentication and authorization. Google Gemini API and Clipdrop API power the AI and image-processing features. The application uses Git and GitHub for version control and is deployed using Vercel for the frontend and Render for the backend.
 
-⚙️ Backend-
-Node.js, Express.js
-Axios, Multer, PDF Parse, FormData, CORS
+AI Studio follows a full-stack client-server architecture:
 
-🗄️ Database-
-Neon PostgreSQL
+👤 User
+↓
+🎨 React + Vite Frontend
+↓
+🔗 REST APIs / Axios
+↓
+⚙️ Node.js + Express Backend
+↓
+├── 🔐 Clerk — Authentication & Plans
+├── 🤖 Gemini / Clipdrop — AI Services
+└── 🗄️ Neon PostgreSQL — Data Storage
 
-🔐 Authentication-
-Clerk Authentication & Authorization
-
-🤖 AI & Image Processing-
-Google Gemini API
-Clipdrop API
-
-☁️ Deployment & Tools-
-Git & GitHub
-Vercel — Frontend
-Render — Backend
-
-💻 Languages-
-JavaScript, HTML, CSS
-
-
-
-🏗️ Architecture
-
-
-                    👤 USER
-                       │
-                       ▼
-              ┌─────────────────┐
-              │ React + Vite    │
-              │ Frontend        │
-              └────────┬────────┘
-                       │
-                  REST API / Axios
-                       │
-                       ▼
-              ┌─────────────────┐
-              │ Node + Express  │
-              │ Backend         │
-              └───────┬─────────┘
-                      │
-        ┌─────────────┼──────────────┐
-        ▼             ▼              ▼
-   ┌─────────┐   ┌──────────┐   ┌────────────┐
-   │ Clerk   │   │ Gemini / │   │   Neon     │
-   │ Auth &  │   │ Clipdrop │   │ PostgreSQL │
-   │ Plans   │   │ AI APIs  │   │            │
-   └─────────┘   └──────────┘   └────────────┘
-
-
-
-
-
-
-
-   
+🔄 How It Works
+👤 User logs in through Clerk.
+🎨 User selects an AI tool from the dashboard.
+📤 Frontend sends the request to the Express backend.
+🤖 Backend processes the request using Gemini/Clipdrop APIs.
+🗄️ Generated content is stored in Neon PostgreSQL.
+📊 Results are displayed and managed through the dashboard.
